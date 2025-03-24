@@ -1,0 +1,45 @@
+import json
+
+
+json_string ="""
+{
+	"title":"Intermediate Python",
+	"students": [
+		{
+			"name":"Jon",
+			"scores": [
+				62,
+				73,
+				68,
+				84
+			]
+		},
+		{
+			"name":"Luke",
+			"scores": [
+				76,
+				74,
+				91,
+				73
+			]
+		},
+		{
+			"name":"Eva",
+			"scores": [
+				91,
+				66,
+				52,
+				33
+			]
+		}
+	]
+}
+"""
+
+json_course_data = json.loads(json_string)
+
+def get_scores():
+	for student in json_course_data["students"]:
+		print(f"{student["name"]}: {student["scores"]}")
+  
+get_scores()
